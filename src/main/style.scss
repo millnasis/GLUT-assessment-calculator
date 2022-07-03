@@ -1,0 +1,145 @@
+body {
+  background-image: url("source/75626274_p0.jpg");
+  background-size: auto 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0.5vh;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+.table {
+  width: 99vw;
+  height: 99vh;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  position: relative;
+  .control {
+    transition: all 0.3s ease-in-out;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 70vw;
+    height: 92vh;
+    margin-right: 5px;
+    box-shadow: 0px 15px 25px 0 rgba(0, 0, 0, 0.6);
+    background: rgba($color: #fff, $alpha: 0.8);
+    padding: 1vw;
+    padding-left: 0;
+    border-radius: 0.3vw;
+    overflow-y: auto;
+    &.active {
+      left: -72vw;
+    }
+    .controlInner {
+      background-color: rgba(255, 255, 255, .4);
+      padding: 0.3vw;
+    }
+  }
+
+  .warp {
+    position: absolute;
+    top: 0;
+    left: 2vw;
+    height: 98vh;
+    overflow: hidden;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    &.active {
+      left: 72vw;
+    }
+    .show-board {
+      margin-bottom: 1vh;
+      background-color: rgba($color: #fff, $alpha: 0.8);
+      width: 845px;
+      padding: 1.5vh;
+      .inner-show-board {
+        padding: 0.5vh;
+        border: 1px solid black;
+        color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        .point-show {
+          flex: 1;
+          height: 120px;
+        }
+        .main {
+          font-size: 6vh;
+          color: black;
+          margin-right: 2vh;
+          margin-left: 1vh;
+          span {
+            font-size: 3vh;
+          }
+        }
+        .sub-collection {
+          transition: all 0.5s ease-in-out;
+          &.active {
+            opacity: 0;
+          }
+          .sub {
+            font-size: 3vh;
+            color: black;
+            margin: 0 1vh;
+          }
+        }
+      }
+    }
+    .table-warp {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      padding-right: 2px;
+      width: 845px;
+      height: 75vh;
+      table {
+        background: rgba($color: #fff, $alpha: 0.8);
+        box-shadow: 0px 15px 25px 0 rgba(0, 0, 0, 0.6);
+        td {
+          white-space: normal;
+        }
+        .component {
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          &.active {
+            border: 2px solid darkred;
+          }
+          &:hover {
+            border: 2px solid darkred;
+          }
+        }
+      }
+    }
+  }
+}
+.control-label {
+  padding: 0.5vw;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.5vw;
+  background: #fafafa;
+  text-align: center;
+}
+
+.component-fade-enter {
+  opacity: 0;
+}
+.component-fade-exit {
+  opacity: 1;
+}
+.component-fade-enter-active {
+  opacity: 1;
+}
+.component-fade-exit-active {
+  opacity: 0;
+}
+.component-fade-enter-active,
+.component-fade-exit-active {
+  transition: 0.3s all ease-in-out;
+}
