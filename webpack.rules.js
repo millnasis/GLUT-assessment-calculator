@@ -65,6 +65,16 @@ module.exports = [
         //也可以缩短哈希，如[hash:10]就是只使用10为哈希值，[ext]是原来的扩展名
       },
       {
+        test: /\.(xlsx|xls|csv)$/,
+        type: "asset/resource",
+        //asset/resource一定要用type选项
+        generator: {
+          filename: "xlsx/[name][ext]",
+        },
+        //generator中的filename是设置输出文件的文件名和存放结构[hash]指的是webpack指定的名字
+        //也可以缩短哈希，如[hash:10]就是只使用10为哈希值，[ext]是原来的扩展名
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {

@@ -1,8 +1,8 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
+  "name": "GLUT_assessment-calculator",
+  "productName": "GLUT_assessment-calculator",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "桂工综测计算器",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -12,11 +12,14 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "Administrator",
+  "author": "millnasis",
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "name": "GLUT_assessment-calculator",
+        "icon": "./src/source/icon.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-zip"

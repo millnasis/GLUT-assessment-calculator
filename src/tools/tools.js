@@ -1,5 +1,3 @@
-const { modalPath } = require("../source/constant");
-
 const ExcelJS = require("exceljs");
 
 function handleText(value) {
@@ -25,7 +23,7 @@ function fixed3(num) {
  * @param {{message:{gradeAndClass:String,IdNum:String,name:String,politicStatus:String},moral:{addItem:Array<Array>,minusItem:Array<Array>,sum:int,total:int},sport:{baseItem:Array<Array>,addItem:Array<Array>,minusItem:Array<Array>,sum:int,total:int,base:int},study:{item:Array<Array>,sum:int},ability:{partOne:Array<Array>,partTwo:Array<Array>,partThree:Array<Array>,sum:int},setting:{moral:int,study:int,sport:int,ability:int}}} dataObj
  * @param {String} filePath
  */
-export async function spawnResultTableFromDataObj(dataObj, filePath) {
+export async function spawnResultTableFromDataObj(dataObj, filePath,modalPath) {
   const { ability, message, moral, sport, study, setting } = dataObj;
   const workbook = new ExcelJS.Workbook();
   await workbook.xlsx.readFile(modalPath);

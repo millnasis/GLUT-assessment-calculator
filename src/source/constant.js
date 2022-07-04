@@ -4,7 +4,3 @@ export const defaultSetting = {
   study: 60,
   ability: 15,
 };
-
-const path = require("path");
-
-export const modalPath = path.join(__dirname, "模板.xlsx");

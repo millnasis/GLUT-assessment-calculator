@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain, dialog, Menu } = require("electron");
 const fs = require("fs");
 const path = require("path");
+const modalPath = path.join(__dirname, "../renderer/xlsx/模板.xlsx");
 const {
   spawnResultTableFromDataObj,
   parseTableToDataObj,
@@ -34,9 +35,6 @@ function createWindow() {
 
   // and load the index.html of the app.
   win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
-  // Open the DevTools.
-  win.webContents.openDevTools();
 
   const menu = Menu.buildFromTemplate([
     {
@@ -108,7 +106,7 @@ function createWindow() {
     if (stateObj.canceled) {
       return;
     }
-    await spawnResultTableFromDataObj(dataObj, stateObj.filePath);
+    await spawnResultTableFromDataObj(dataObj, stateObj.filePath, modalPath);
   });
 
   ipcMain.handle("send-setting-object", async (e, ...args) => {
