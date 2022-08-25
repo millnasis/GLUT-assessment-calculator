@@ -1,5 +1,5 @@
 body {
-  background-image: url("source/75626274_p0.jpg");
+  background-color: darken($color: #fff, $amount: 5%);
   background-size: auto 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ body {
       left: -72vw;
     }
     .controlInner {
-      background-color: rgba(255, 255, 255, .4);
+      background-color: rgba(255, 255, 255, 0.4);
       padding: 0.3vw;
     }
   }
@@ -48,26 +48,33 @@ body {
     position: absolute;
     top: 0;
     left: 2vw;
-    height: 98vh;
+    width: 98vw;
+    height: 95vh;
     overflow: hidden;
     padding: 5px;
-    transition: all 0.3s ease-in-out;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease-in-out;
     &.active {
       left: 72vw;
     }
     .show-board {
       margin-bottom: 1vh;
       background-color: rgba($color: #fff, $alpha: 0.8);
-      width: 845px;
+      width: 100%;
       padding: 1.5vh;
       .inner-show-board {
         padding: 0.5vh;
         border: 1px solid black;
         color: rgba(0, 0, 0, 0.6);
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        overflow: hidden;
         .point-show {
           flex: 1;
+          min-width: 680px;
           height: 120px;
         }
         .main {
@@ -97,8 +104,8 @@ body {
       overflow-x: hidden;
       border: 2px solid rgba(0, 0, 0, 0.6);
       padding-right: 2px;
-      width: 845px;
-      height: 75vh;
+      width: 100%;
+      flex: 1;
       table {
         background: rgba($color: #fff, $alpha: 0.8);
         box-shadow: 0px 15px 25px 0 rgba(0, 0, 0, 0.6);

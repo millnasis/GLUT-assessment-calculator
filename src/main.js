@@ -92,6 +92,19 @@ function createWindow() {
 
   win.setMenu(menu);
 
+  win.webContents.openDevTools();
+
+  win.on("resize", () => {
+    win.webContents.send("window-resize");
+  });
+
+  win.on("maximize", () => {
+    win.webContents.send("window-resize");
+  });
+  win.on("unmaximize", () => {
+    win.webContents.send("window-resize");
+  });
+
   win.on("closed", () => {
     settingPage.destroy();
   });

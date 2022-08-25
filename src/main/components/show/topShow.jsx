@@ -29,6 +29,9 @@ class TopShow extends React.Component {
     ability = fixed2(ability);
 
     this.showPie = echarts.init(document.querySelector("#pie"));
+    window.Global.onResizeWindow((e) => {
+      this.showPie.resize();
+    });
     this.showPie.setOption({
       tooltip: {},
       title: [

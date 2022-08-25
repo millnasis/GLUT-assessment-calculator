@@ -16,3 +16,7 @@ contextBridge.exposeInMainWorld("Setting", {
   openSetting: (setting) => ipcRenderer.invoke("send-setting-object", setting),
   newSetting: (setting) => ipcRenderer.invoke("new-setting-object", setting),
 });
+
+contextBridge.exposeInMainWorld("Global", {
+  onResizeWindow: (cb) => ipcRenderer.on("window-resize", cb),
+});
