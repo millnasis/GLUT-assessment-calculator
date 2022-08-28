@@ -8,6 +8,14 @@ function fixed2(num) {
   return Math.floor(num * 100) / 100;
 }
 
+const piePosition = [
+  { msg: "9%", center: ["10%", "50%"], radius: ["50%", "75%"] },
+  { msg: "29%", center: ["30%", "50%"], radius: ["50%", "60%"] },
+  { msg: "49%", center: ["50%", "50%"], radius: ["50%", "60%"] },
+  { msg: "69%", center: ["70%", "50%"], radius: ["50%", "60%"] },
+  { msg: "89%", center: ["90%", "50%"], radius: ["50%", "60%"] },
+];
+
 class TopShow extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +50,7 @@ class TopShow extends React.Component {
           textStyle: {
             fontSize: 14,
           },
-          left: "17%",
+          left: piePosition[0].msg,
         },
         {
           text: `${moral}\nx${setting.moral}%`,
@@ -51,7 +59,7 @@ class TopShow extends React.Component {
           textStyle: {
             fontSize: 14,
           },
-          left: "34%",
+          left: piePosition[1].msg,
         },
         {
           text: `${study}\nx${setting.study}%`,
@@ -60,7 +68,7 @@ class TopShow extends React.Component {
           textStyle: {
             fontSize: 14,
           },
-          left: "49%",
+          left: piePosition[2].msg,
         },
         {
           text: `${sport}\nx${setting.sport}%`,
@@ -69,7 +77,7 @@ class TopShow extends React.Component {
           textStyle: {
             fontSize: 14,
           },
-          left: "64%",
+          left: piePosition[3].msg,
         },
         {
           text: `${ability}\nx${setting.ability}%`,
@@ -78,29 +86,41 @@ class TopShow extends React.Component {
           textStyle: {
             fontSize: 14,
           },
-          left: "79%",
+          left: piePosition[4].msg,
         },
       ],
       series: [
         {
           type: "pie",
-          radius: ["50%", "75%"],
-          center: ["18%", "50%"],
+          radius: piePosition[0].radius,
+          center: piePosition[0].center,
           data: [
             {
               name: "德育",
+              label: {
+                position: "inside",
+              },
               value: moral * (setting.moral / 100),
             },
             {
               name: "智育",
+              label: {
+                position: "inside",
+              },
               value: study * (setting.study / 100),
             },
             {
               name: "体育",
+              label: {
+                position: "inside",
+              },
               value: sport * (setting.sport / 100),
             },
             {
               name: "能力",
+              label: {
+                position: "inside",
+              },
               value: ability * (setting.ability / 100),
             },
             {
@@ -117,8 +137,8 @@ class TopShow extends React.Component {
         },
         {
           type: "pie",
-          radius: ["50%", "60%"],
-          center: ["35%", "50%"],
+          radius: piePosition[1].radius,
+          center: piePosition[1].center,
           label: {
             position: "inside",
           },
@@ -142,8 +162,8 @@ class TopShow extends React.Component {
         },
         {
           type: "pie",
-          radius: ["50%", "60%"],
-          center: ["50%", "50%"],
+          radius: piePosition[2].radius,
+          center: piePosition[2].center,
           label: {
             position: "inside",
           },
@@ -167,8 +187,8 @@ class TopShow extends React.Component {
         },
         {
           type: "pie",
-          radius: ["50%", "60%"],
-          center: ["65%", "50%"],
+          radius: piePosition[3].radius,
+          center: piePosition[3].center,
           label: {
             position: "inside",
           },
@@ -192,8 +212,8 @@ class TopShow extends React.Component {
         },
         {
           type: "pie",
-          radius: ["50%", "60%"],
-          center: ["80%", "50%"],
+          radius: piePosition[4].radius,
+          center: piePosition[4].center,
           label: {
             position: "inside",
           },
@@ -242,7 +262,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "17%",
+            left: piePosition[0].msg,
           },
           {
             text: `${moral}\nx${setting.moral}%`,
@@ -251,7 +271,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "34%",
+            left: piePosition[1].msg,
           },
           {
             text: `${study}\nx${setting.study}%`,
@@ -260,7 +280,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "49%",
+            left: piePosition[2].msg,
           },
           {
             text: `${sport}\nx${setting.sport}%`,
@@ -269,7 +289,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "64%",
+            left: piePosition[3].msg,
           },
           {
             text: `${ability}\nx${setting.ability}%`,
@@ -278,29 +298,41 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "79%",
+            left: piePosition[4].msg,
           },
         ],
         series: [
           {
             type: "pie",
-            radius: ["50%", "75%"],
-            center: ["18%", "50%"],
+            radius: piePosition[0].radius,
+            center: piePosition[0].center,
             data: [
               {
                 name: "德育",
+                label: {
+                  position: "inside",
+                },
                 value: moral * (setting.moral / 100),
               },
               {
                 name: "智育",
+                label: {
+                  position: "inside",
+                },
                 value: study * (setting.study / 100),
               },
               {
                 name: "体育",
+                label: {
+                  position: "inside",
+                },
                 value: sport * (setting.sport / 100),
               },
               {
                 name: "能力",
+                label: {
+                  position: "inside",
+                },
                 value: ability * (setting.ability / 100),
               },
               {
@@ -317,8 +349,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["35%", "50%"],
+            radius: piePosition[1].radius,
+            center: piePosition[1].center,
             label: {
               position: "inside",
             },
@@ -341,8 +373,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["50%", "50%"],
+            radius: piePosition[2].radius,
+            center: piePosition[2].center,
             label: {
               position: "inside",
             },
@@ -365,8 +397,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["65%", "50%"],
+            radius: piePosition[3].radius,
+            center: piePosition[3].center,
             label: {
               position: "inside",
             },
@@ -389,8 +421,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["80%", "50%"],
+            radius: piePosition[4].radius,
+            center: piePosition[4].center,
             label: {
               position: "inside",
             },
@@ -423,7 +455,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "17%",
+            left: piePosition[0].msg,
           },
           {
             text: ``,
@@ -432,7 +464,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "34%",
+            left: piePosition[1].msg,
           },
           {
             text: ``,
@@ -441,7 +473,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "49%",
+            left: piePosition[2].msg,
           },
           {
             text: ``,
@@ -450,7 +482,7 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "64%",
+            left: piePosition[3].msg,
           },
           {
             text: ``,
@@ -459,29 +491,41 @@ class TopShow extends React.Component {
             textStyle: {
               fontSize: 14,
             },
-            left: "79%",
+            left: piePosition[4].msg,
           },
         ],
         series: [
           {
             type: "pie",
-            radius: ["50%", "75%"],
-            center: ["18%", "50%"],
+            radius: piePosition[0].radius,
+            center: piePosition[0].center,
             data: [
               {
                 name: "德育",
+                label: {
+                  position: "inside",
+                },
                 value: moral * (setting.moral / 100),
               },
               {
                 name: "智育",
+                label: {
+                  position: "inside",
+                },
                 value: study * (setting.study / 100),
               },
               {
                 name: "体育",
+                label: {
+                  position: "inside",
+                },
                 value: sport * (setting.sport / 100),
               },
               {
                 name: "能力",
+                label: {
+                  position: "inside",
+                },
                 value: ability * (setting.ability / 100),
               },
               {
@@ -498,8 +542,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["35%", "50%"],
+            radius: piePosition[1].radius,
+            center: piePosition[1].center,
             label: {
               position: "inside",
             },
@@ -507,8 +551,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["50%", "50%"],
+            radius: piePosition[2].radius,
+            center: piePosition[2].center,
             label: {
               position: "inside",
             },
@@ -516,8 +560,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["65%", "50%"],
+            radius: piePosition[3].radius,
+            center: piePosition[3].center,
             label: {
               position: "inside",
             },
@@ -525,8 +569,8 @@ class TopShow extends React.Component {
           },
           {
             type: "pie",
-            radius: ["50%", "60%"],
-            center: ["80%", "50%"],
+            radius: piePosition[4].radius,
+            center: piePosition[4].center,
             label: {
               position: "inside",
             },

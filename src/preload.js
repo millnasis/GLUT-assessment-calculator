@@ -19,4 +19,6 @@ contextBridge.exposeInMainWorld("Setting", {
 
 contextBridge.exposeInMainWorld("Global", {
   onResizeWindow: (cb) => ipcRenderer.on("window-resize", cb),
+  onStarPicReq: (cb) => ipcRenderer.on("star-pic-request", cb),
+  openShell : () => ipcRenderer.invoke("open-shell")
 });

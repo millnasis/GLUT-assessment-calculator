@@ -15,12 +15,45 @@ body {
   padding: 1vh;
 }
 
+.qq-code {
+  content: url("./source/temp_qrcode_share_1985551393.png.png");
+  width: 100%;
+}
+
 .table {
   width: 99vw;
   height: 99vh;
   margin-bottom: 20px;
   margin-right: 20px;
   position: relative;
+  .tips {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 4vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 100;
+    font-size: 3vh;
+    .msg {
+      margin-right: 2px;
+    }
+    a {
+      margin-right: 10px;
+      .img {
+        height: 4vh;
+        content: url("./source/stars.jpg");
+      }
+    }
+    .qq {
+      transition: color 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        color: cyan;
+      }
+    }
+  }
   .control {
     transition: all 0.3s ease-in-out;
     top: 0;
@@ -74,7 +107,7 @@ body {
         overflow: hidden;
         .point-show {
           flex: 1;
-          min-width: 680px;
+          min-width: 500px;
           height: 120px;
         }
         .main {

@@ -1,4 +1,11 @@
-const { app, BrowserWindow, ipcMain, dialog, Menu } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  ipcMain,
+  dialog,
+  Menu,
+  shell,
+} = require("electron");
 const fs = require("fs");
 const path = require("path");
 const modalPath = path.join(__dirname, "../renderer/xlsx/模板.xlsx");
@@ -6,6 +13,16 @@ const {
   spawnResultTableFromDataObj,
   parseTableToDataObj,
 } = require("./tools/tools");
+
+if (process.defaultApp) {
+  if (process.argv.length >= 2) {
+    app.setAsDefaultProtocolClient("electron-fiddle", process.execPath, [
+      path.resolve(process.argv[1]),
+    ]);
+  }
+} else {
+  app.setAsDefaultProtocolClient("electron-fiddle");
+}
 
 if (require("electron-squirrel-startup")) {
   app.quit();
@@ -92,8 +109,6 @@ function createWindow() {
 
   win.setMenu(menu);
 
-  win.webContents.openDevTools();
-
   win.on("resize", () => {
     win.webContents.send("window-resize");
   });
@@ -107,6 +122,12 @@ function createWindow() {
 
   win.on("closed", () => {
     settingPage.destroy();
+  });
+
+  ipcMain.handle("open-shell", async () => {
+    shell.openExternal(
+      "https://github.com/millnasis/GLUT-assessment-calculator"
+    );
   });
 
   ipcMain.handle("export-xlsx", async (e, ...args) => {

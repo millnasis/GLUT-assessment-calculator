@@ -1,7 +1,7 @@
 {
   "name": "GLUT_assessment-calculator",
   "productName": "GLUT_assessment-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "桂工综测计算器",
   "main": ".webpack/main",
   "scripts": {

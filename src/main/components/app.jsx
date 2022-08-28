@@ -14,6 +14,7 @@ import TotalShow from "./show/totalShow.jsx";
 import Sport from "./sport/sport.jsx";
 import Study from "./study/study.jsx";
 import { connect } from "react-redux";
+import { Modal } from "antd";
 
 import { actions as settingActions } from "../reducers/setting";
 import { actions as abilityActions } from "../reducers/ability";
@@ -21,6 +22,8 @@ import { actions as moralActions } from "../reducers/moral";
 import { actions as messageActions } from "../reducers/userMessage";
 import { actions as studyActions } from "../reducers/study";
 import { actions as sportActions } from "../reducers/sport";
+
+import { QqOutlined } from "@ant-design/icons";
 
 const { change_item } = settingActions;
 const { rebuild_ability_obj } = abilityActions;
@@ -35,7 +38,9 @@ import { bindActionCreators } from "redux";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      modal: false,
+    };
     this.unload = this.unload.bind(this);
   }
   componentDidMount() {
@@ -72,7 +77,24 @@ class App extends React.Component {
   render() {
     return (
       <div className="table">
+        <Modal
+          visible={this.state.modal}
+          onCancel={() => this.setState({ modal: false })}
+          footer={null}
+        >
+          <img className="qq-code"></img>
+        </Modal>
         <Control></Control>
+        <div className="tips">
+          <div className="msg">如果它对你有帮助，请给我一颗星星→</div>
+          <a onClick={() => window.Global.openShell()}>
+            <img className="img"></img>
+          </a>
+          <div className="msg">个人QQ→</div>
+          <div className="qq" onClick={() => this.setState({ modal: true })}>
+            <QqOutlined></QqOutlined>
+          </div>
+        </div>
         <div
           className={
             "warp" +
