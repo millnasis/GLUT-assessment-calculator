@@ -6,8 +6,6 @@
 
 使用React + Antd开发，目前只有基于Electron开发的桌面版，网页版还在开发中
 
-背景图来自Pixiv，id:75626274，可能造成侵权，之后会改
-
 ## 使用
 为了计算综测，自然就需要获取你的各项分数，计算器基于综测评分表开发，点击相应的位置即可开始填入对应成绩，同时还提供了一点ECharts实现的图表，让你的分数体现得更直观
 
@@ -37,10 +35,11 @@ npm run make
 ```
 
 ## 运行截图
-![image](https://user-images.githubusercontent.com/70905899/176999300-c403667c-b754-4b6d-91f2-4abd0b437228.png)
-
-![image](https://user-images.githubusercontent.com/70905899/176999331-daf34382-5e99-4314-8eab-f0f06826887c.png)
-
+![QQ截图20220828162707](https://user-images.githubusercontent.com/70905899/187103744-da0a7bed-97cd-4e6a-b10a-1ea4a2a379e1.jpg)
+![QQ截图20220828162442](https://user-images.githubusercontent.com/70905899/187103752-4e32fe14-97de-4ae1-9cc4-974297b5d19b.jpg)
+![QQ截图20220828162503](https://user-images.githubusercontent.com/70905899/187103768-ac69aac4-5953-4f27-b8ed-3a84c8d7b320.jpg)
+![QQ图片20220828162740](https://user-images.githubusercontent.com/70905899/187103777-d0b4bed9-a389-4b82-a27a-a8fbdcc67084.png)
+![QQ截图20220828162919](https://user-images.githubusercontent.com/70905899/187103782-8d83ab72-409b-482b-9b39-f83d496cea63.jpg)
 ![image](https://user-images.githubusercontent.com/70905899/176999340-f110be44-8f72-435b-ae58-b4622744bc45.png)
 
 ## 联系我
